@@ -10,21 +10,23 @@
 
 <body style="font-family: Arial, Helvetica, sans-serif; background-color: #f4f6f9; color: #333333; margin: 0; padding: 0; line-height: 1.6;">
 
+    <a href="#main-content" style="position: absolute; left: -9999px; top: auto; width: 1px; height: 1px; overflow: hidden;">Skip to main content</a>
+
     <header style="background-color: #2c3e50; color: #ffffff; padding: 30px 40px; text-align: center;">
         <h1 style="margin: 0 0 15px 0; font-size: 2.2em; letter-spacing: 1px;">Welcome to My Web Page</h1>
 
-        <nav>
+        <nav aria-label="Main navigation">
             <a href="#about" style="color: #ecf0f1; text-decoration: none; margin: 0 10px; font-weight: bold;">About Me</a>
-            <span style="color: #7f8c8d;">|</span>
+            <span style="color: #7f8c8d;" aria-hidden="true">|</span>
             <a href="#interests" style="color: #ecf0f1; text-decoration: none; margin: 0 10px; font-weight: bold;">My Interests</a>
-            <span style="color: #7f8c8d;">|</span>
+            <span style="color: #7f8c8d;" aria-hidden="true">|</span>
             <a href="#skills" style="color: #ecf0f1; text-decoration: none; margin: 0 10px; font-weight: bold;">My Skills</a>
-            <span style="color: #7f8c8d;">|</span>
+            <span style="color: #7f8c8d;" aria-hidden="true">|</span>
             <a href="#contact" style="color: #ecf0f1; text-decoration: none; margin: 0 10px; font-weight: bold;">Contact</a>
         </nav>
     </header>
 
-    <main style="max-width: 800px; margin: 0 auto; padding: 30px 20px;">
+    <main id="main-content" style="max-width: 800px; margin: 0 auto; padding: 30px 20px;">
 
         <section id="about" style="background-color: #ffffff; padding: 25px 30px; margin-bottom: 25px; border-left: 6px solid #3498db; border-radius: 6px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
             <h2 style="color: #2c3e50; margin-top: 0; font-size: 1.6em;">About Me</h2>
@@ -55,9 +57,10 @@
             <h2 style="color: #2c3e50; margin-top: 0; font-size: 1.6em;">My Skills</h2>
 
             <table border="1" cellpadding="10" style="border-collapse: collapse; width: 100%; background-color: #ffffff;">
+                <caption style="text-align: left; margin-bottom: 8px; font-style: italic;">Skills and experience level</caption>
                 <tr style="background-color: #3498db; color: #ffffff;">
-                    <th style="padding: 10px; text-align: left;">Skill</th>
-                    <th style="padding: 10px; text-align: left;">Experience</th>
+                    <th scope="col" style="padding: 10px; text-align: left;">Skill</th>
+                    <th scope="col" style="padding: 10px; text-align: left;">Experience</th>
                 </tr>
 
                 <tr style="background-color: #ecf0f1;">
@@ -82,8 +85,8 @@
 
             <p>
                 One website I find useful for learning web technologies is
-                <a href="https://www.w3schools.com/" target="_blank" style="color: #3498db; font-weight: bold; text-decoration: none;">
-                    W3Schools
+                <a href="https://www.w3schools.com/" target="_blank" rel="noopener" style="color: #3498db; font-weight: bold; text-decoration: none;">
+                    W3Schools <span aria-hidden="true">(opens in a new tab)</span>
                 </a>.
             </p>
         </section>
@@ -91,17 +94,17 @@
         <section id="contact" style="background-color: #ffffff; padding: 25px 30px; margin-bottom: 25px; border-left: 6px solid #c0392b; border-radius: 6px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
             <h2 style="color: #2c3e50; margin-top: 0; font-size: 1.6em;">Contact Me</h2>
 
-            <form>
+            <form aria-label="Contact form">
                 <label for="name" style="font-weight: bold; display: block; margin-bottom: 5px;">Name:</label>
-                <input type="text" id="name" name="name" style="width: 100%; padding: 10px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box;">
+                <input type="text" id="name" name="name" required aria-required="true" style="width: 100%; padding: 10px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box;">
 
                 <label for="email" style="font-weight: bold; display: block; margin-bottom: 5px;">Email:</label>
-                <input type="email" id="email" name="email" style="width: 100%; padding: 10px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box;">
+                <input type="email" id="email" name="email" required aria-required="true" style="width: 100%; padding: 10px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box;">
 
                 <label for="message" style="font-weight: bold; display: block; margin-bottom: 5px;">Message:</label>
-                <textarea id="message" name="message" rows="5" cols="30" style="width: 100%; padding: 10px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box; resize: vertical;"></textarea>
+                <textarea id="message" name="message" rows="5" cols="30" required aria-required="true" style="width: 100%; padding: 10px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box; resize: vertical;"></textarea>
 
-                <button type="submit" style="background-color: #3498db; color: #ffffff; border: none; padding: 12px 25px; font-size: 1em; border-radius: 4px; cursor: pointer;">Submit</button>
+                <button type="submit" aria-label="Submit contact form" style="background-color: #3498db; color: #ffffff; border: none; padding: 12px 25px; font-size: 1em; border-radius: 4px; cursor: pointer;">Submit</button>
             </form>
         </section>
 
