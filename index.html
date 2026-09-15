@@ -6,30 +6,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>About Me</title>
+
+    <link rel="stylesheet" href="style.css">
 </head>
 
-<body style="font-family: Arial, Helvetica, sans-serif; background-color: #f4f6f9; color: #333333; margin: 0; padding: 0; line-height: 1.6;">
+<body>
 
-    <a href="#main-content" style="position: absolute; left: -9999px; top: auto; width: 1px; height: 1px; overflow: hidden;">Skip to main content</a>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
 
-    <header style="background-color: #2c3e50; color: #ffffff; padding: 30px 40px; text-align: center;">
-        <h1 style="margin: 0 0 15px 0; font-size: 2.2em; letter-spacing: 1px;">Welcome to My Web Page</h1>
+    <header class="site-header">
+        <h1 class="site-title">Welcome to My Web Page</h1>
 
-        <nav aria-label="Main navigation">
-            <a href="#about" style="color: #ecf0f1; text-decoration: none; margin: 0 10px; font-weight: bold;">About Me</a>
-            <span style="color: #7f8c8d;" aria-hidden="true">|</span>
-            <a href="#interests" style="color: #ecf0f1; text-decoration: none; margin: 0 10px; font-weight: bold;">My Interests</a>
-            <span style="color: #7f8c8d;" aria-hidden="true">|</span>
-            <a href="#skills" style="color: #ecf0f1; text-decoration: none; margin: 0 10px; font-weight: bold;">My Skills</a>
-            <span style="color: #7f8c8d;" aria-hidden="true">|</span>
-            <a href="#contact" style="color: #ecf0f1; text-decoration: none; margin: 0 10px; font-weight: bold;">Contact</a>
+        <nav class="main-nav" aria-label="Main navigation">
+            <a href="#about">About Me</a>
+            <span class="nav-separator" aria-hidden="true">|</span>
+            <a href="#interests">My Interests</a>
+            <span class="nav-separator" aria-hidden="true">|</span>
+            <a href="#skills">My Skills</a>
+            <span class="nav-separator" aria-hidden="true">|</span>
+            <a href="#contact">Contact</a>
         </nav>
     </header>
 
-    <main id="main-content" style="max-width: 800px; margin: 0 auto; padding: 30px 20px;">
+    <main id="main-content" class="main-content">
 
-        <section id="about" style="background-color: #ffffff; padding: 25px 30px; margin-bottom: 25px; border-left: 6px solid #3498db; border-radius: 6px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
-            <h2 style="color: #2c3e50; margin-top: 0; font-size: 1.6em;">About Me</h2>
+        <section id="about" class="section">
+            <h2 class="section-title">About Me</h2>
 
             <p>
                 Hello! My name is Timilehin. I am an MSc student
@@ -42,76 +44,77 @@
             </p>
         </section>
 
-        <section id="interests" style="background-color: #ffffff; padding: 25px 30px; margin-bottom: 25px; border-left: 6px solid #e67e22; border-radius: 6px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
-            <h2 style="color: #2c3e50; margin-top: 0; font-size: 1.6em;">My Interests</h2>
+        <section id="interests" class="section">
+            <h2 class="section-title">My Interests</h2>
 
-            <ul style="padding-left: 20px;">
-                <li style="margin-bottom: 8px;">Web Technologies</li>
-                <li style="margin-bottom: 8px;">Cloud Computing</li>
-                <li style="margin-bottom: 8px;">Software Development</li>
-                <li style="margin-bottom: 8px;">Cybersecurity</li>
+            <ul class="interests-list">
+                <li>Web Technologies</li>
+                <li>Cloud Computing</li>
+                <li>Software Development</li>
+                <li>Cybersecurity</li>
             </ul>
         </section>
 
-        <section id="skills" style="background-color: #ffffff; padding: 25px 30px; margin-bottom: 25px; border-left: 6px solid #27ae60; border-radius: 6px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
-            <h2 style="color: #2c3e50; margin-top: 0; font-size: 1.6em;">My Skills</h2>
+        <section id="skills" class="section">
+            <h2 class="section-title">My Skills</h2>
 
-            <table border="1" cellpadding="10" style="border-collapse: collapse; width: 100%; background-color: #ffffff;">
-                <caption style="text-align: left; margin-bottom: 8px; font-style: italic;">Skills and experience level</caption>
-                <tr style="background-color: #3498db; color: #ffffff;">
-                    <th scope="col" style="padding: 10px; text-align: left;">Skill</th>
-                    <th scope="col" style="padding: 10px; text-align: left;">Experience</th>
-                </tr>
-
-                <tr style="background-color: #ecf0f1;">
-                    <td style="padding: 10px;">HTML</td>
-                    <td style="padding: 10px;">Beginner</td>
+            <table class="skills-table">
+                <caption>Skills and experience level</caption>
+                <tr>
+                    <th scope="col">Skill</th>
+                    <th scope="col">Experience</th>
                 </tr>
 
                 <tr>
-                    <td style="padding: 10px;">Cloud Computing</td>
-                    <td style="padding: 10px;">Intermediate</td>
+                    <td>HTML</td>
+                    <td>Beginner</td>
                 </tr>
 
-                <tr style="background-color: #ecf0f1;">
-                    <td style="padding: 10px;">Programming</td>
-                    <td style="padding: 10px;">Intermediate</td>
+                <tr>
+                    <td>Cloud Computing</td>
+                    <td>Intermediate</td>
+                </tr>
+
+                <tr>
+                    <td>Programming</td>
+                    <td>Intermediate</td>
                 </tr>
             </table>
         </section>
 
-        <section style="background-color: #ffffff; padding: 25px 30px; margin-bottom: 25px; border-left: 6px solid #8e44ad; border-radius: 6px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
-            <h2 style="color: #2c3e50; margin-top: 0; font-size: 1.6em;">My Favourite Website</h2>
+        <section id="favourite" class="section">
+            <h2 class="section-title">My Favourite Website</h2>
 
             <p>
                 One website I find useful for learning web technologies is
-                <a href="https://www.w3schools.com/" target="_blank" rel="noopener" style="color: #3498db; font-weight: bold; text-decoration: none;">
+                <a href="https://www.w3schools.com/" target="_blank" rel="noopener" class="fav-link">
                     W3Schools <span aria-hidden="true">(opens in a new tab)</span>
                 </a>.
             </p>
         </section>
 
-        <section id="contact" style="background-color: #ffffff; padding: 25px 30px; margin-bottom: 25px; border-left: 6px solid #c0392b; border-radius: 6px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
-            <h2 style="color: #2c3e50; margin-top: 0; font-size: 1.6em;">Contact Me</h2>
+        <section id="contact" class="section">
+            <h2 class="section-title">Contact Me</h2>
 
             <form aria-label="Contact form">
-                <label for="name" style="font-weight: bold; display: block; margin-bottom: 5px;">Name:</label>
-                <input type="text" id="name" name="name" required aria-required="true" style="width: 100%; padding: 10px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box;">
+                <label for="name" class="form-label">Name:</label>
+                <input type="text" id="name" name="name" required aria-required="true" class="form-input">
 
-                <label for="email" style="font-weight: bold; display: block; margin-bottom: 5px;">Email:</label>
-                <input type="email" id="email" name="email" required aria-required="true" style="width: 100%; padding: 10px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box;">
+                <label for="email" class="form-label">Email:</label>
+                <input type="email" id="email" name="email" required aria-required="true" class="form-input">
 
-                <label for="message" style="font-weight: bold; display: block; margin-bottom: 5px;">Message:</label>
-                <textarea id="message" name="message" rows="5" cols="30" required aria-required="true" style="width: 100%; padding: 10px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box; resize: vertical;"></textarea>
+                <label for="message" class="form-label">Message:</label>
+                <textarea id="message" name="message" rows="5" cols="30" required aria-required="true"
+                    class="form-input"></textarea>
 
-                <button type="submit" aria-label="Submit contact form" style="background-color: #3498db; color: #ffffff; border: none; padding: 12px 25px; font-size: 1em; border-radius: 4px; cursor: pointer;">Submit</button>
+                <button type="submit" aria-label="Submit contact form" class="submit-btn">Submit</button>
             </form>
         </section>
 
     </main>
 
-    <footer style="background-color: #2c3e50; color: #ffffff; text-align: center; padding: 20px; margin-top: 10px;">
-        <p style="margin: 0;">&copy; 2026 My Web Page</p>
+    <footer class="site-footer">
+        <p>&copy; 2026 My Web Page</p>
     </footer>
 
 </body>
