@@ -164,6 +164,67 @@ textarea.form-input {
     resize: vertical;
 }
 
+.form-group {
+    border: none;
+    padding: 0;
+    margin: 0 0 15px 0;
+}
+
+.form-option {
+    display: block;
+    font-weight: normal;
+    margin-bottom: 8px;
+}
+
+.form-checkbox {
+    margin-bottom: 15px;
+}
+
+.greeting,
+.topic-hint {
+    color: #2471a3;
+    font-size: 0.9em;
+    margin: -8px 0 15px 0;
+}
+
+.error-msg {
+    display: block;
+    color: #c0392b;
+    font-size: 0.85em;
+    margin: -10px 0 15px 0;
+}
+
+.form-input--error {
+    border: 2px solid #c0392b;
+}
+
+.char-count {
+    display: block;
+    color: #7f8c8d;
+    font-size: 0.85em;
+    text-align: right;
+    margin: -10px 0 15px 0;
+}
+
+.form-message {
+    padding: 12px 15px;
+    margin-bottom: 15px;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+.form-message--success {
+    background-color: #d5f5e3;
+    color: #145a32;
+    border: 1px solid #27ae60;
+}
+
+.form-message--error {
+    background-color: #fadbd8;
+    color: #78281f;
+    border: 1px solid #c0392b;
+}
+
 .submit-btn {
     width: 100%;
     background-color: #3498db;
