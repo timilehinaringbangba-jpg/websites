@@ -96,16 +96,50 @@
         <section id="contact" class="section">
             <h2 class="section-title">Contact Me</h2>
 
-            <form aria-label="Contact form">
+            <form id="contact-form" aria-label="Contact form">
                 <label for="name" class="form-label">Name:</label>
-                <input type="text" id="name" name="name" required aria-required="true" class="form-input">
+                <input type="text" id="name" name="name" required aria-required="true"
+                    autocomplete="name" class="form-input">
+                <p id="name-greeting" class="greeting"></p>
+                <span class="error-msg" id="name-error"></span>
 
                 <label for="email" class="form-label">Email:</label>
-                <input type="email" id="email" name="email" required aria-required="true" class="form-input">
+                <input type="email" id="email" name="email" required aria-required="true"
+                    autocomplete="email" class="form-input">
+                <span class="error-msg" id="email-error"></span>
+
+                <label for="topic" class="form-label">Topic:</label>
+                <select id="topic" name="topic" class="form-input">
+                    <option value="general">General enquiry</option>
+                    <option value="web">Web development</option>
+                    <option value="cyber">Cybersecurity</option>
+                    <option value="other">Other</option>
+                </select>
+                <p id="topic-hint" class="topic-hint"></p>
+                <span class="error-msg" id="topic-error"></span>
 
                 <label for="message" class="form-label">Message:</label>
-                <textarea id="message" name="message" rows="5" cols="30" required aria-required="true"
-                    class="form-input"></textarea>
+                <textarea id="message" name="message" rows="5" cols="30" maxlength="500" required
+                    aria-required="true" class="form-input"></textarea>
+                <span id="char-count" class="char-count">0 / 500 characters</span>
+                <span class="error-msg" id="message-error"></span>
+
+                <fieldset class="form-group">
+                    <legend class="form-label">Preferred contact method:</legend>
+                    <label class="form-option">
+                        <input type="radio" name="contact-method" value="email" checked> Email
+                    </label>
+                    <label class="form-option">
+                        <input type="radio" name="contact-method" value="phone"> Phone
+                    </label>
+                </fieldset>
+
+                <label class="form-option form-checkbox">
+                    <input type="checkbox" name="consent" required> I consent to being contacted about my enquiry
+                </label>
+                <span class="error-msg" id="consent-error"></span>
+
+                <p id="form-message" class="form-message" role="status" hidden></p>
 
                 <button type="submit" aria-label="Submit contact form" class="submit-btn">Submit</button>
             </form>
@@ -116,6 +150,8 @@
     <footer class="site-footer">
         <p>&copy; 2026 My Web Page</p>
     </footer>
+
+    <script src="script.js" defer></script>
 
 </body>
 
