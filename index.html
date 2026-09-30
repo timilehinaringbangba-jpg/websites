@@ -24,8 +24,12 @@
             <span class="nav-separator" aria-hidden="true">|</span>
             <a href="#skills">My Skills</a>
             <span class="nav-separator" aria-hidden="true">|</span>
+            <a href="#quote">Quote</a>
+            <span class="nav-separator" aria-hidden="true">|</span>
             <a href="#contact">Contact</a>
         </nav>
+
+        <button id="theme-toggle" class="theme-toggle" type="button" aria-pressed="false">Switch to dark mode</button>
     </header>
 
     <main id="main-content" class="main-content">
@@ -53,6 +57,15 @@
                 <li>Software Development</li>
                 <li>Cybersecurity</li>
             </ul>
+
+            <div class="interest-add">
+                <label for="new-interest" class="form-label">Add a new interest:</label>
+                <input type="text" id="new-interest" class="form-input" maxlength="50"
+                    placeholder="e.g. Artificial Intelligence">
+                <span id="interest-error" class="error-msg"></span>
+                <button type="button" id="add-interest" class="add-btn">Add interest</button>
+                <p class="interest-note">Tip: you can remove any interest with its Remove button.</p>
+            </div>
         </section>
 
         <section id="skills" class="section">
@@ -80,6 +93,8 @@
                     <td>Intermediate</td>
                 </tr>
             </table>
+
+            <p class="skills-note">Tip: click a row to highlight a skill you are currently working on.</p>
         </section>
 
         <section id="favourite" class="section">
@@ -90,6 +105,23 @@
                 <a href="https://www.w3schools.com/" target="_blank" rel="noopener" class="fav-link">
                     W3Schools <span aria-hidden="true">(opens in a new tab)</span>
                 </a>.
+            </p>
+        </section>
+
+        <section id="quote" class="section">
+            <h2 class="section-title">Quote of the Moment</h2>
+
+            <blockquote id="quote-box" class="quote-box" aria-live="polite">
+                <p id="quote-text" class="quote-text">Loading quote...</p>
+                <footer id="quote-author" class="quote-author"></footer>
+            </blockquote>
+
+            <p id="quote-error" class="error-msg" role="alert"></p>
+
+            <button type="button" id="new-quote" class="quote-btn">Show another quote</button>
+
+            <p class="quote-credit">Quotes provided by the
+                <a href="https://api.freeapi.app/" target="_blank" rel="noopener">freeapi.app</a> public API.
             </p>
         </section>
 
@@ -148,7 +180,8 @@
     </main>
 
     <footer class="site-footer">
-        <p>&copy; 2026 My Web Page</p>
+        <p>&copy; <span id="footer-year">2026</span> My Web Page</p>
+        <p id="last-updated" class="last-updated"></p>
     </footer>
 
     <script src="script.js" defer></script>
