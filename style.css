@@ -100,6 +100,10 @@ a {
     border-left-color: #8e44ad;
 }
 
+#quote {
+    border-left-color: #16a085;
+}
+
 #contact {
     border-left-color: #c0392b;
 }
@@ -116,6 +120,10 @@ a {
 
 .interests-list li {
     margin-bottom: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
 }
 
 .skills-table {
@@ -284,4 +292,214 @@ textarea.form-input {
         width: auto;
         padding: 12px 25px;
     }
+}
+
+/* ---------- Module 5 enhancements ---------- */
+
+body,
+.section {
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.theme-toggle {
+    margin-top: 12px;
+    background-color: transparent;
+    color: #ecf0f1;
+    border: 2px solid #ecf0f1;
+    border-radius: 20px;
+    padding: 8px 16px;
+    font-size: 0.9em;
+    cursor: pointer;
+}
+
+.theme-toggle:hover {
+    background-color: #ecf0f1;
+    color: #2c3e50;
+}
+
+.interest-add {
+    margin-top: 20px;
+}
+
+.add-btn {
+    background-color: #27ae60;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    padding: 12px 20px;
+    font-size: 1em;
+    cursor: pointer;
+}
+
+.add-btn:hover {
+    background-color: #1e8449;
+}
+
+.remove-interest {
+    background-color: transparent;
+    color: #c0392b;
+    border: 1px solid #c0392b;
+    border-radius: 4px;
+    padding: 4px 10px;
+    font-size: 0.8em;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+.remove-interest:hover {
+    background-color: #c0392b;
+    color: #ffffff;
+}
+
+.interest-note,
+.skills-note {
+    color: #7f8c8d;
+    font-size: 0.9em;
+    font-style: italic;
+    margin-bottom: 0;
+}
+
+.skills-table tr:not(:first-child) {
+    cursor: pointer;
+}
+
+.skills-table tr.row--highlight td {
+    background-color: #fdebd0;
+    font-weight: bold;
+}
+
+.back-to-top {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    background-color: #2c3e50;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    padding: 12px 18px;
+    font-size: 0.9em;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease;
+    z-index: 50;
+}
+
+.back-to-top--visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.back-to-top:hover {
+    background-color: #3498db;
+}
+
+.site-footer .last-updated {
+    font-size: 0.85em;
+    color: #bdc3c7;
+    margin-top: 8px;
+}
+
+/* Dark theme overrides */
+body.dark-theme {
+    background-color: #1b2431;
+    color: #e4e7eb;
+}
+
+body.dark-theme .section {
+    background-color: #27354a;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+}
+
+body.dark-theme .section-title {
+    color: #f4f6f9;
+}
+
+body.dark-theme .form-input {
+    background-color: #1b2431;
+    color: #e4e7eb;
+    border-color: #51606f;
+}
+
+body.dark-theme .skills-table th,
+body.dark-theme .skills-table td {
+    border-color: #51606f;
+}
+
+body.dark-theme .skills-table tr:first-child {
+    background-color: #2471a3;
+}
+
+body.dark-theme .skills-table tr:nth-child(even) {
+    background-color: #31435c;
+}
+
+body.dark-theme .skills-table tr.row--highlight td {
+    background-color: #7e5109;
+    color: #ffffff;
+}
+
+body.dark-theme .interest-note,
+body.dark-theme .skills-note,
+body.dark-theme .char-count {
+    color: #9fb3c8;
+}
+
+body.dark-theme .back-to-top {
+    background-color: #3498db;
+}
+
+/* Quote of the Moment (API feature) */
+.quote-box {
+    margin: 0 0 15px 0;
+    padding: 15px 20px;
+    background-color: #f4f6f9;
+    border-left: 4px solid #16a085;
+    border-radius: 4px;
+}
+
+.quote-text {
+    margin: 0 0 10px 0;
+    font-size: 1.15em;
+    font-style: italic;
+}
+
+.quote-author {
+    color: #7f8c8d;
+    font-weight: bold;
+}
+
+.quote-btn {
+    background-color: #16a085;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    padding: 12px 20px;
+    font-size: 1em;
+    cursor: pointer;
+}
+
+.quote-btn:hover {
+    background-color: #117a65;
+}
+
+.quote-btn:disabled {
+    opacity: 0.6;
+    cursor: wait;
+}
+
+.quote-credit {
+    color: #7f8c8d;
+    font-size: 0.85em;
+    margin: 15px 0 0 0;
+}
+
+body.dark-theme .quote-box {
+    background-color: #1b2431;
+}
+
+body.dark-theme .quote-author,
+body.dark-theme .quote-credit {
+    color: #9fb3c8;
 }
