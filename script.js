@@ -153,4 +153,137 @@ document.addEventListener('DOMContentLoaded', function () {
             formMessage.hidden = false;
         }
     });
+
+    /* ---------- Enhancement: light/dark theme toggle ---------- */
+    var themeToggle = document.getElementById('theme-toggle');
+
+    function applyTheme(isDark) {
+        document.body.classList.toggle('dark-theme', isDark);
+        themeToggle.setAttribute('aria-pressed', String(isDark));
+        themeToggle.textContent = isDark ? 'Switch to light mode' : 'Switch to dark mode';
+    }
+
+    applyTheme(window.localStorage.getItem('theme') === 'dark');
+
+    themeToggle.addEventListener('click', function () {
+        var isDark = !document.body.classList.contains('dark-theme');
+        applyTheme(isDark);
+        window.localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    });
+
+    /* ---------- Enhancement: add/remove interests ---------- */
+    var interestsList = document.querySelector('.interests-list');
+    var newInterestInput = document.getElementById('new-interest');
+    var addInterestBtn = document.getElementById('add-interest');
+    var interestError = document.getElementById('interest-error');
+
+    function createRemoveButton() {
+        var removeBtn = document.createElement('button');
+        removeBtn.type = 'button';
+        removeBtn.className = 'remove-interest';
+        removeBtn.textContent = 'Remove';
+        removeBtn.addEventListener('click', function () {
+            interestsList.removeChild(removeBtn.parentNode);
+        });
+        return removeBtn;
+    }
+
+    // Give the interests already in the HTML a remove button too
+    var existingInterests = interestsList.getElementsByTagName('li');
+    for (var i = 0; i < existingInterests.length; i++) {
+        existingInterests[i].appendChild(createRemoveButton());
+    }
+
+    function addInterest() {
+        var text = newInterestInput.value.trim();
+        if (text === '') {
+            interestError.textContent = 'Please type an interest first.';
+            newInterestInput.focus();
+            return;
+        }
+        interestError.textContent = '';
+
+        var item = document.createElement('li');
+        item.appendChild(document.createTextNode(text));
+        item.appendChild(createRemoveButton());
+        interestsList.appendChild(item);
+
+        newInterestInput.value = '';
+        newInterestInput.focus();
+    }
+
+    addInterestBtn.addEventListener('click', addInterest);
+    newInterestInput.addEventListener('keydown', function (event) {
+        if (event.key === 'Enter') {
+            event.preventDefault();
+            addInterest();
+        }
+    });
+
+    /* ---------- Enhancement: click a skills row to highlight it ---------- */
+    var skillRows = document.querySelectorAll('.skills-table tr');
+    for (var j = 1; j < skillRows.length; j++) {
+        skillRows[j].addEventListener('click', function () {
+            this.classList.toggle('row--highlight');
+        });
+    }
+
+    /* ---------- Enhancement: dynamic footer ---------- */
+    document.getElementById('footer-year').textContent = new Date().getFullYear();
+    if (document.lastModified) {
+        document.getElementById('last-updated').textContent = 'Last updated: ' + document.lastModified;
+    }
+
+    /* ---------- Enhancement: back-to-top button built with DOM methods ---------- */
+    var backToTop = document.createElement('button');
+    backToTop.type = 'button';
+    backToTop.className = 'back-to-top';
+    backToTop.textContent = 'Back to top';
+    document.body.appendChild(backToTop);
+
+    window.addEventListener('scroll', function () {
+        if (window.scrollY > 300) {
+            backToTop.classList.add('back-to-top--visible');
+        } else {
+            backToTop.classList.remove('back-to-top--visible');
+        }
+    });
+
+    backToTop.addEventListener('click', function () {
+        window.scrollTo(0, 0);
+    });
+
+    /* ---------- Enhancement: random quote from the freeapi.app API ---------- */
+    var quoteText = document.getElementById('quote-text');
+    var quoteAuthor = document.getElementById('quote-author');
+    var quoteError = document.getElementById('quote-error');
+    var newQuoteBtn = document.getElementById('new-quote');
+
+    function fetchQuote() {
+        quoteText.textContent = 'Loading quote...';
+        quoteAuthor.textContent = '';
+        quoteError.textContent = '';
+        newQuoteBtn.disabled = true;
+
+        fetch('https://api.freeapi.app/api/v1/public/quotes/quote/random')
+            .then(function (response) {
+                if (!response.ok) {
+                    throw new Error('HTTP error ' + response.status);
+                }
+                return response.json();
+            })
+            .then(function (result) {
+                quoteText.textContent = '\u201C' + result.data.content + '\u201D';
+                quoteAuthor.textContent = '\u2014 ' + result.data.author;
+                newQuoteBtn.disabled = false;
+            })
+            .catch(function (error) {
+                quoteText.textContent = 'Sorry, the quote could not be loaded right now.';
+                quoteError.textContent = 'Please check your connection and try again. (' + error.message + ')';
+                newQuoteBtn.disabled = false;
+            });
+    }
+
+    newQuoteBtn.addEventListener('click', fetchQuote);
+    fetchQuote();
 });
