@@ -1,0 +1,52 @@
+/* Custom styles for the Bootstrap 5 About Me app */
+
+html {
+    scroll-behavior: smooth;
+}
+
+.skip-link {
+    position: absolute;
+    left: -9999px;
+    top: -9999px;
+    z-index: 1100;
+}
+
+.skip-link:focus,
+.skip-link:focus-visible {
+    position: fixed;
+    left: 10px;
+    top: 10px;
+    background-color: #ffffff;
+    color: #000000;
+    padding: 10px 15px;
+    border-radius: 4px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    text-decoration: none;
+}
+
+.back-to-top {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    z-index: 1050;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.back-to-top--visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.section-toggle {
+    flex-shrink: 0;
+}
+
+#quote-figure {
+    margin-bottom: 0;
+}
+
+#quote-author {
+    margin-top: 0.5rem;
+}
