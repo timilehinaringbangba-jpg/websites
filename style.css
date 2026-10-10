@@ -503,3 +503,47 @@ body.dark-theme .quote-author,
 body.dark-theme .quote-credit {
     color: #9fb3c8;
 }
+
+/* ---------- Module 6 jQuery enhancements ---------- */
+
+.section-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.section-toggle {
+    background-color: transparent;
+    color: #3498db;
+    border: 1px solid #3498db;
+    border-radius: 4px;
+    padding: 4px 10px;
+    font-size: 0.75em;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+.section-toggle:hover {
+    background-color: #3498db;
+    color: #ffffff;
+}
+
+body.dark-theme .section-toggle {
+    color: #5dade2;
+    border-color: #5dade2;
+}
+
+body.dark-theme .section-toggle:hover {
+    background-color: #5dade2;
+    color: #1b2431;
+}
+
+.interest-filter {
+    margin-bottom: 10px;
+}
+
+.section-content {
+    overflow: hidden;
+}
